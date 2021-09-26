@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Hello world </title>
+        <title> Rock, paper, scissors </title>
         <meta charset="UTF-8"/>
     </head>
 
     <body>
-            <h1> Hello world, edit </h1>
-            <h1> why won't this fucking thing update </h1>
+        <script>
+            
+            let playerChoice = prompt("Rock, Paper or scissors?")
+            let playerChoiceLowerCase = playerChoice.trim().toLowerCase()
+            let computerChoice = Math.floor(Math.random() *3 + 1); // 1 = Rock / 2 = paper / 3 = scissors
+
+            function playRound (input1, input2){
+                if (playerChoiceLowerCase == "rock" && computerChoice == 1)
+                return "Computer: Rock |It's a tie!" 
+                    else if (playerChoiceLowerCase == "rock" && computerChoice == 2)
+                    return "Computer: Paper | You lose!"
+                    else if (playerChoiceLowerCase == "rock" && computerChoice == 3)
+                    return " Computer: Scissors | You win!" 
+
+                if (playerChoiceLowerCase == "paper" && computerChoice == 1)
+                return "Computer: Rock | You win!" 
+                    else if (playerChoiceLowerCase == "paper" && computerChoice == 2)
+                    return "Computer: Paper | It's a tie!"
+                    else if (playerChoiceLowerCase == "paper" && computerChoice == 3)
+                    return " Computer: Scissors | You lose!" 
+                
+                if (playerChoiceLowerCase == "scissors" && computerChoice == 1)
+                return "Computer: Rock | You lose!" 
+                    else if (playerChoiceLowerCase == "paper" && computerChoice == 2)
+                    return "Computer: Paper | You win!"
+                    else if (playerChoiceLowerCase == "paper" && computerChoice == 3)
+                    return " Computer: Scissors | It's a tie!" 
+
+                else {
+                    alert("Typo :( ")
+                }
+                   
+            }
+      
+        console.log(playRound(playerChoiceLowerCase, computerChoice))
+        
+        </script>
+        
     </body>
     
 </html>
